@@ -8,3 +8,7 @@
         createUser(username:$username, email:$email);
         header("Location: ../views/home.php?message=success");
     }
+
+
+
+    

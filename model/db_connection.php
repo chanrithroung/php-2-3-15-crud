@@ -6,7 +6,7 @@
     $DB_NAME     = "crud_php"; 
 
 
-    function db_conection() {
+    function db_connection() {
         global $HOST, $DB_PASSWORD, $DB_USER, $DB_NAME, $SERVER_PORT;
         
         try {
@@ -16,12 +16,14 @@
            
             $pdo->exec($sql);
             $pdo->exec("USE $DB_NAME");
-            
             return $pdo;
         } catch (PDOException $e) {
             echo "Have something when wrong : ".$e->getMessage();
         } 
     }
+
+
+
 
 
     

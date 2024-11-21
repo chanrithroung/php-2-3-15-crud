@@ -2,7 +2,7 @@
 
     require_once "db_connection.php";
 
-    $pdo = db_conection();
+    $pdo = db_connection();
     function createTable() {
         global $pdo;
         $sql = "CREATE TABLE IF NOT EXISTS users(
