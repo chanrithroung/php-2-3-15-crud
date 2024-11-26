@@ -10,6 +10,6 @@
 </head>
 <body>
     <div class="container-fluid bg-dark p-5 text-light text-center">
-        <h1>CRUDE WITH PHP</h1>
+        <h1>CRUD WITH PHP</h1>
     </div>
     
