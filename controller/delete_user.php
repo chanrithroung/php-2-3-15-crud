@@ -8,5 +8,5 @@
         $sql = "DELETE FROM `users` WHERE `id` = '$id'";
         $pdo->exec($sql);
 
-        header("Location: ../views/list_users.php");
+        header("Location: ../views/list_users.php?message=success");
     }

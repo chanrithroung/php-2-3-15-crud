@@ -8,6 +8,20 @@
 
     $pdo = $statement->query($sql);
     $users = $pdo->fetchAll(PDO::FETCH_ASSOC);
+
+    if (isset($_GET['message'])) {
+        echo '
+            <script>
+                 $(document).ready(function() {
+                    Swal.fire({
+                        title: "User Deleted success!",
+                        text: "User was delete success!",
+                        icon: "success"
+                    });
+                })
+            </script>
+        ';
+    }
     
 ?>
 
@@ -54,7 +68,10 @@
 </body>
 <script>
 
+
+
     $(document).ready(function() {
+
         $(".btn-remove").click(function(){
             const removeId = $(this).attr('data-remove-id');
             $("#remove-id").val(removeId);
@@ -86,3 +103,38 @@
     </div>
   </div>
 </div>
+
+
+
+
+<?php
+// include 'config.php';
+
+// if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+//     $title = $_POST['title'];
+//     $image = $_FILES['image'];
+
+//     if ($image['error'] == 0) {
+//         $uploadDir = 'uploads/';
+//         $fileName = basename($image['name']);
+//         $uploadPath = $uploadDir . $fileName;
+
+//         if (move_uploaded_file($image['tmp_name'], $uploadPath)) {
+//             $sql = "INSERT INTO images (title, image_path) VALUES ('$title', '$uploadPath')";
+//             if ($conn->query($sql)) {
+//                 echo "Image uploaded successfully!";
+//             } else {
+//                 echo "Database error: " . $conn->error;
+//             }
+//         } else {
+//             echo "Failed to upload image.";
+//         }
+//     }
+// }
+?>
+<!-- 
+<form method="post" enctype="multipart/form-data">
+    <input type="text" name="title" placeholder="Image Title" required>
+    <input type="file" name="image" required>
+    <button type="submit">Upload</button>
+</form> -->
